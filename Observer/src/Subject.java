@@ -17,24 +17,23 @@ public class Subject {
 
     public int getState() {
         return _state;
-    }
+    } // returns current state
 
     public void attach(Observer observer) {
         observerList.add(observer);
-    }
+    } // add an observer of this subject to the observer list
 
     public void setState(int state) {
 
         this._state = state;
         notifyAllObservers();
-    }
+    } // set the state of the subject and notify all observers of the change
 
     public void notifyAllObservers() {
 
         for(Observer observer : observerList) {
             observer.update();
         }
-
-    }
+    } // notify all observers of the change
 
 }
